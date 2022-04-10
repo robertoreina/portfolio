@@ -40,6 +40,11 @@ const skillsData = [
         level: "Junior Advanced"
     },
     {
+        name: "Docker",
+        photo: "https://devcode.es/wp-content/uploads/2021/02/Docker-Logo.png",
+        level: "Junior Advanced"
+    },
+    {
         name: "RPGLE/DB2",
         photo: "https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/ibm-db2-logo.png",
         level: "Senior"
