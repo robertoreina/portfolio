@@ -25,11 +25,6 @@ const skillsData = [
         level: "Junior Advanced"
     },
     {
-        name: "NodeJs",
-        photo: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
-        level: "Junior Advanced"
-    },
-    {
         name: "REACT JS",
         photo: "https://img.icons8.com/bubbles/100/000000/react.png",
         level: "Junior"
@@ -37,6 +32,21 @@ const skillsData = [
     {
         name: "MariaDb",
         photo: "https://www.enriquedans.com/wp-content/uploads/2013/05/MariaDB.jpg",
+        level: "Junior Advanced"
+    },
+    {
+        name: "NodeJs",
+        photo: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+        level: "Junior Advanced"
+    },
+    {
+        name: "MariaDB",
+        photo: "https://www.enriquedans.com/wp-content/uploads/2013/05/MariaDB.jpg",
+        level: "Junior Advanced"
+    },
+    {
+        name: "MongoDB",
+        photo: "https://tecnoticias.net/wp-content/uploads/2021/02/mongodb-atlas-google-cloud-partnership-nosql-databases-integrations-2.jpg",
         level: "Junior Advanced"
     },
     {
