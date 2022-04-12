@@ -6,7 +6,6 @@ const initialLanguage = 'es';
 
 const LanguageProvider = ({children}) =>{
     const [language, setLanguage] = useState(initialLanguage)
-    const [text, setText] = useState(null)
 
     const handleLanguage = (e) =>{
         if (e.target.checked) {
@@ -16,7 +15,7 @@ const LanguageProvider = ({children}) =>{
         }
     }
 
-    const data = {text, handleLanguage, language}
+    const data = {handleLanguage, language}
 
     return  <LanguageContext.Provider value={data}> {children}</LanguageContext.Provider>
 }
