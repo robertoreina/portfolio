@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react'
 import Header from '../commons/Header';
 import Footer from '../commons/Footer';
-import CV from "../../files/CV_Roberto_Reina.pdf";
+import CV_ES from "../../files/CV_Roberto_Reina_es.pdf";
+import CV_EN from "../../files/CV_Roberto_Reina_en.pdf";
+import LanguageContext from '../../context/LanguageContext';
+import aboutData from '../../data/about';
+
 
 function About() {
+    const { language } = useContext(LanguageContext);
+
     return (
         <>
             <Header />
             <section id="about">
-                <div class="about container">
-                    <div class="col-left">
-                        <div class="about-img">
-                        <img src="../../images/Profile.jpeg" alt="img" />
+                <div className="about container">
+                    <div className="col-left">
+                        <div className="about-img">
+                            <img src="../../images/Profile.jpeg" alt="img" />
                         </div>
                     </div>
-                    <div class="col-right">
-                        <h1 class="section-title">About <span>me</span></h1>
-                        <h2>Front End Developer</h2>
-                        <p>Focused in striking a balance between functional and aesthetic design, ensuring web design is optimized, easy to use,
-                           and was built with best practices. I can use HTML, CSS, and JavaScript to produce responsive websites and web apps that
-                           provide users the best and most appropriate experience suited to their device and browser.</p>
-                        <a href={CV} class="cta" target="_blank" rel='noreferrer noopener' download>Download Resume</a>
+                    <div className="col-right">
+                        <h1 className="section-title">{aboutData.title[language]} <span>{aboutData.title2[language]}</span></h1>
+                        <h2>{aboutData.profile[language]}</h2>
+                        <p>{aboutData.about[language]}</p>
+                        <a href={language === 'en' ? CV_EN : CV_ES} className="cta" target="_blank"
+                            rel='noreferrer noopener' download>{aboutData.downloadLabel[language]}</a>
                     </div>
                 </div>
             </section>

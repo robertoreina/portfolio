@@ -4,15 +4,15 @@ import skillsData from '../../data/skillslist';
 function ServiceList() {
     return (
         <section id="services">
-        <div class="services container">
-            <div class="service-top">
-                <h1 class="section-title">Skil<span>l</span>s</h1>
+        <div className="services container">
+            <div className="service-top">
+                <h1 className="section-title">Skil<span>l</span>s</h1>
             </div>
-            <div class="service-bottom">
-                {skillsData.map((skill) => {
+            <div className="service-bottom">
+                {skillsData.map((skill, index) => {
                     return (
-                        <div class="service-item">
-                            <div class="icon"><img src={skill.photo} alt={skill.name}/></div>
+                        <div className="service-item" key={index}>
+                            <div className="icon"><img src={skill.photo} alt={skill.name}/></div>
                             <h2>{skill.name}</h2>
                             <p>{skill.level}</p>
                         </div>    

@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react'
 import data from '../../data/data';
+import LanguageContext from '../../context/LanguageContext';
 
 function ProjectsList() {
+    const { language } = useContext(LanguageContext);
+
     return (
         <section id="projects">
-        <div class="projects container">
-          <div class="projects-header">
-            <h1 class="section-title">Recent <span>Projects</span></h1>
-          </div>
-          <div class="all-projects">
+            <div className="projects container">
+                <div className="projects-header">
+                    {language === 'en' ? <h1 className="section-title">Recent <span>Projects</span></h1>
+                        : <h1 className="section-title"><span>Proyectos</span> Recientes</h1>}
+            </div>
+            <div className="all-projects">
                 {data.map((data, index) => {
                     return (
-                        <div class="project-item">
-                            <div class="project-info">
+                        <div className="project-item" key={index}>
+                            <div className="project-info">
                                 <h1>{data.name}</h1>
-                                <h2><a href={data.url} target='_blank' rel="noopener, noreferrer">Enter here</a></h2>
-                                <p>{data.description}</p>
+                                <h2><a href={data.url} target='_blank' rel="noopener, noreferrer">{language === 'en' ? "Enter here" : "Ingrese aqui"}</a></h2>
+                                <p>{data.description[language]}</p>
                             </div>
-                            <div class="project-img">
+                            <div className="project-img">
                                 <img src={data.photo} alt={data.name} />
                             </div>
                         </div>
@@ -25,7 +29,7 @@ function ProjectsList() {
                 })}
             </div>
         </div>
-      </section>
+      </section >
     )
 }
 

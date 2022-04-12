@@ -4,14 +4,14 @@ import socialData from '../../data/socialData';
 function footer() {
     return (
         <footer id="footer">
-        <div class="footer footer_container">
-          <div class="brand">
+        <div className="footer footer_container">
+          <div className="brand">
             <h1><span>R</span>oberto <span>R</span>eina</h1>
           </div>
-          <div class="social-icon">
-            {socialData.map((social) => {
+          <div className="social-icon">
+            {socialData.map((social, index) => {
               return (
-                <div class="social-item">
+                <div className="social-item" key={index}>
                   <a href={social.url}><img src={social.photo} alt={social.name}/></a>
                 </div>
               );

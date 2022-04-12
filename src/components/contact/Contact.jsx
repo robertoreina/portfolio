@@ -1,38 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react'
 import Header from '../commons/Header';
 import Footer from '../commons/Footer';
+import contactData from '../../data/contact';
+import ContactList from './ContactList';
+import LanguageContext from '../../context/LanguageContext'
+
 
 function Contact() {
+    const {language } = useContext(LanguageContext);
+
     return (
         <>
             <Header />
             <section id="contact">
-                <div class="contact container">
+                <div className="contact container">
                     <div>
-                        <h1 class="section-title">Contact <span>info</span></h1>
+                        <h1 className="section-title">{contactData.title[language]} <span>{contactData.title2[language]}</span></h1>
                     </div>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" alt='Phone' /></div>
-                        <div class="contact-info">
-                            <h1>Phone</h1>
-                            <h2>+56 9 9569 4692</h2>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" alt='Email' /></div>
-                        <div class="contact-info">
-                            <h1>Email</h1>
-                            <h2>robertto.e@gmail.com</h2>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" alt='Address' /></div>
-                        <div class="contact-info">
-                            <h1>Address</h1>
-                            <h2>La Florida, Santiago, Chile</h2>
-                        </div>
-                    </div>
+                    <div className="contact-items">
+                        {contactData.item.map((contact, index) => <ContactList contact={contact} key={index} />)}
                     </div>
                 </div>
             </section>
